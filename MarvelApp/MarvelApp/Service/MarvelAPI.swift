@@ -19,12 +19,11 @@ struct Marvel {
     typealias CompletionProposals = (Result<CharacterDataWrapper>) -> Void
     
     mutating func listCharacters(completion: @escaping CompletionProposals) {
-        let time = Date().ticks
-       // let time = TimeInterval(date)
+        let timestamp = Date().ticks
         
-        let hash = MD5().getHash(time, MarvelAPIAuth.privateKey, MarvelAPIAuth.publicKey)
-        let stringUrl: String = "\(MarvelAPIAuth.url)ts=\(time)&apikey=\(MarvelAPIAuth.publicKey)&hash=\(hash)"
-        print(stringUrl)
+        let hash = MD5().getHash(timestamp, MarvelAPIAuth.privateKey, MarvelAPIAuth.publicKey)
+        let stringUrl: String = "\(MarvelAPIAuth.url)ts=\(timestamp)&apikey=\(MarvelAPIAuth.publicKey)&hash=\(hash)"
+
         Service.requestAPI(url: stringUrl, completion: { (result) in
             let newResult = result.flatMap { try JSONDecoder().decode(CharacterDataWrapper.self, from: $0) }
             completion(newResult)

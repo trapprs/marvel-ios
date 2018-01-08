@@ -115,7 +115,6 @@
 				E07A99072003FD3000BFF43A /* Support Files */,
 				E07A98FF2003F26000BFF43A /* Service */,
 				E07A99022003F3FD00BFF43A /* Model */,
-				E07A98D12003EFFC00BFF43A /* AppDelegate.swift */,
 				E07A98D32003EFFC00BFF43A /* ViewController.swift */,
 				E07A98D52003EFFC00BFF43A /* Main.storyboard */,
 				E07A98D82003EFFC00BFF43A /* Assets.xcassets */,
@@ -168,6 +167,7 @@
 			children = (
 				E07A99082003FD4300BFF43A /* MD5.swift */,
 				E07A99142004264A00BFF43A /* DataExtension.swift */,
+				E07A98D12003EFFC00BFF43A /* AppDelegate.swift */,
 			);
 			path = "Support Files";
 			sourceTree = "<group>";

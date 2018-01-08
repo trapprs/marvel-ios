@@ -11,7 +11,7 @@ import Foundation
 struct Characters: Decodable {
     let id: Int?
     let name: String
-    let description: String
+    let description: String?
     let resourceURI: String?
     let thumbnail: [String: String]?
 }
@@ -29,7 +29,7 @@ extension Characters {
         let container = try decoder.container(keyedBy: Keys.self)
         self.id = try container.decodeIfPresent(Int.self, forKey: .id)
         self.name = try container.decode(String.self, forKey: .name)
-        self.description = try container.decode(String.self, forKey: .description)
+        self.description = try container.decodeIfPresent(String.self, forKey: .description)
         self.resourceURI = try container.decodeIfPresent(String.self, forKey: .resourceURI)
         self.thumbnail = try container.decodeIfPresent([String: String].self, forKey: .thumbnail)
     }
