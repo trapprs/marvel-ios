@@ -14,6 +14,7 @@
 		E07A98DC2003EFFC00BFF43A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E07A98DA2003EFFC00BFF43A /* LaunchScreen.storyboard */; };
 		E07A98E72003EFFC00BFF43A /* MarvelAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07A98E62003EFFC00BFF43A /* MarvelAppTests.swift */; };
 		E07A98F22003EFFC00BFF43A /* MarvelAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07A98F12003EFFC00BFF43A /* MarvelAppUITests.swift */; };
+		E07A99012003F2BF00BFF43A /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07A99002003F2BF00BFF43A /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		E07A98ED2003EFFC00BFF43A /* MarvelAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E07A98F12003EFFC00BFF43A /* MarvelAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAppUITests.swift; sourceTree = "<group>"; };
 		E07A98F32003EFFC00BFF43A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E07A99002003F2BF00BFF43A /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,8 @@
 		E07A98D02003EFFC00BFF43A /* MarvelApp */ = {
 			isa = PBXGroup;
 			children = (
+				E07A98FF2003F26000BFF43A /* Service */,
+				E07A99022003F3FD00BFF43A /* Model */,
 				E07A98D12003EFFC00BFF43A /* AppDelegate.swift */,
 				E07A98D32003EFFC00BFF43A /* ViewController.swift */,
 				E07A98D52003EFFC00BFF43A /* Main.storyboard */,
@@ -123,6 +127,21 @@
 				E07A98F32003EFFC00BFF43A /* Info.plist */,
 			);
 			path = MarvelAppUITests;
+			sourceTree = "<group>";
+		};
+		E07A98FF2003F26000BFF43A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				E07A99002003F2BF00BFF43A /* Service.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		E07A99022003F3FD00BFF43A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,6 +280,7 @@
 			files = (
 				E07A98D42003EFFC00BFF43A /* ViewController.swift in Sources */,
 				E07A98D22003EFFC00BFF43A /* AppDelegate.swift in Sources */,
+				E07A99012003F2BF00BFF43A /* Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
