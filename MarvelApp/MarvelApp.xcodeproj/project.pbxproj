@@ -15,6 +15,12 @@
 		E07A98E72003EFFC00BFF43A /* MarvelAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07A98E62003EFFC00BFF43A /* MarvelAppTests.swift */; };
 		E07A98F22003EFFC00BFF43A /* MarvelAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07A98F12003EFFC00BFF43A /* MarvelAppUITests.swift */; };
 		E07A99012003F2BF00BFF43A /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07A99002003F2BF00BFF43A /* Service.swift */; };
+		E07A99042003F57C00BFF43A /* Characters.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07A99032003F57C00BFF43A /* Characters.swift */; };
+		E07A99062003F76900BFF43A /* MarvelAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07A99052003F76900BFF43A /* MarvelAPI.swift */; };
+		E07A99092003FD4300BFF43A /* MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07A99082003FD4300BFF43A /* MD5.swift */; };
+		E07A991120040D4F00BFF43A /* CharacterDataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07A991020040D4F00BFF43A /* CharacterDataWrapper.swift */; };
+		E07A99132004238D00BFF43A /* CharacterDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07A99122004238D00BFF43A /* CharacterDataContainer.swift */; };
+		E07A99152004264A00BFF43A /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07A99142004264A00BFF43A /* DataExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,13 @@
 		E07A98F12003EFFC00BFF43A /* MarvelAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAppUITests.swift; sourceTree = "<group>"; };
 		E07A98F32003EFFC00BFF43A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E07A99002003F2BF00BFF43A /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		E07A99032003F57C00BFF43A /* Characters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Characters.swift; sourceTree = "<group>"; };
+		E07A99052003F76900BFF43A /* MarvelAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAPI.swift; sourceTree = "<group>"; };
+		E07A99082003FD4300BFF43A /* MD5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MD5.swift; sourceTree = "<group>"; };
+		E07A990A2003FF4600BFF43A /* MarvelApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MarvelApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		E07A991020040D4F00BFF43A /* CharacterDataWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDataWrapper.swift; sourceTree = "<group>"; };
+		E07A99122004238D00BFF43A /* CharacterDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDataContainer.swift; sourceTree = "<group>"; };
+		E07A99142004264A00BFF43A /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +112,7 @@
 		E07A98D02003EFFC00BFF43A /* MarvelApp */ = {
 			isa = PBXGroup;
 			children = (
+				E07A99072003FD3000BFF43A /* Support Files */,
 				E07A98FF2003F26000BFF43A /* Service */,
 				E07A99022003F3FD00BFF43A /* Model */,
 				E07A98D12003EFFC00BFF43A /* AppDelegate.swift */,
@@ -106,6 +120,7 @@
 				E07A98D52003EFFC00BFF43A /* Main.storyboard */,
 				E07A98D82003EFFC00BFF43A /* Assets.xcassets */,
 				E07A98DA2003EFFC00BFF43A /* LaunchScreen.storyboard */,
+				E07A990A2003FF4600BFF43A /* MarvelApp-Bridging-Header.h */,
 				E07A98DD2003EFFC00BFF43A /* Info.plist */,
 			);
 			path = MarvelApp;
@@ -133,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				E07A99002003F2BF00BFF43A /* Service.swift */,
+				E07A99052003F76900BFF43A /* MarvelAPI.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -140,8 +156,20 @@
 		E07A99022003F3FD00BFF43A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E07A99032003F57C00BFF43A /* Characters.swift */,
+				E07A991020040D4F00BFF43A /* CharacterDataWrapper.swift */,
+				E07A99122004238D00BFF43A /* CharacterDataContainer.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E07A99072003FD3000BFF43A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E07A99082003FD4300BFF43A /* MD5.swift */,
+				E07A99142004264A00BFF43A /* DataExtension.swift */,
+			);
+			path = "Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +240,7 @@
 				TargetAttributes = {
 					E07A98CD2003EFFC00BFF43A = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					E07A98E12003EFFC00BFF43A = {
@@ -278,9 +307,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E07A99062003F76900BFF43A /* MarvelAPI.swift in Sources */,
+				E07A99132004238D00BFF43A /* CharacterDataContainer.swift in Sources */,
 				E07A98D42003EFFC00BFF43A /* ViewController.swift in Sources */,
+				E07A99092003FD4300BFF43A /* MD5.swift in Sources */,
 				E07A98D22003EFFC00BFF43A /* AppDelegate.swift in Sources */,
 				E07A99012003F2BF00BFF43A /* Service.swift in Sources */,
+				E07A991120040D4F00BFF43A /* CharacterDataWrapper.swift in Sources */,
+				E07A99152004264A00BFF43A /* DataExtension.swift in Sources */,
+				E07A99042003F57C00BFF43A /* Characters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,12 +481,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 95WF9DSUCR;
 				INFOPLIST_FILE = MarvelApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = trapprs.MarvelApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MarvelApp/MarvelApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -461,12 +499,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 95WF9DSUCR;
 				INFOPLIST_FILE = MarvelApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = trapprs.MarvelApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MarvelApp/MarvelApp-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -13,6 +13,25 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        var marvel = Marvel()
+        marvel.listCharacters { [unowned self] result in
+            guard let results = result.value else {
+                if let error = result.error {
+                    print("Error: \(error)")
+                }
+                return
+            }
+            DispatchQueue.main.async {
+                for i in (results.data?.results)! {
+                    print(i.name)
+                }
+            }
+        }
+        
+       
+        
     }
 
     override func didReceiveMemoryWarning() {
