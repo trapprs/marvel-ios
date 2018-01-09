@@ -10,7 +10,9 @@ import UIKit
 
 class CharactersTableViewCell: UITableViewCell {
     
+    @IBOutlet weak var imageCharacter: UIImageView!
     @IBOutlet weak var name: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

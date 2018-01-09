@@ -64,6 +64,10 @@
 		E07A99122004238D00BFF43A /* CharacterDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDataContainer.swift; sourceTree = "<group>"; };
 		E07A99142004264A00BFF43A /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
 		E07A991C2004630900BFF43A /* CharactersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableViewCell.swift; sourceTree = "<group>"; };
+		E07A992420046D9B00BFF43A /* Marvel-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marvel-BoldItalic.ttf"; sourceTree = "<group>"; };
+		E07A992520046D9B00BFF43A /* Marvel-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marvel-Italic.ttf"; sourceTree = "<group>"; };
+		E07A992620046D9B00BFF43A /* Marvel-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marvel-Bold.ttf"; sourceTree = "<group>"; };
+		E07A992720046D9B00BFF43A /* Marvel-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Marvel-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,10 +119,9 @@
 			isa = PBXGroup;
 			children = (
 				E07A9919200462C700BFF43A /* View */,
-				E07A99072003FD3000BFF43A /* Support Files */,
 				E07A98FF2003F26000BFF43A /* Service */,
 				E07A99022003F3FD00BFF43A /* Model */,
-				E07A98D82003EFFC00BFF43A /* Assets.xcassets */,
+				E07A99072003FD3000BFF43A /* Support Files */,
 				E07A98DA2003EFFC00BFF43A /* LaunchScreen.storyboard */,
 				E07A990A2003FF4600BFF43A /* MarvelApp-Bridging-Header.h */,
 				E07A98DD2003EFFC00BFF43A /* Info.plist */,
@@ -166,6 +169,8 @@
 		E07A99072003FD3000BFF43A /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				E07A992320046D8900BFF43A /* Fonts */,
+				E07A98D82003EFFC00BFF43A /* Assets.xcassets */,
 				E07A99082003FD4300BFF43A /* MD5.swift */,
 				E07A99142004264A00BFF43A /* DataExtension.swift */,
 				E07A98D12003EFFC00BFF43A /* AppDelegate.swift */,
@@ -176,7 +181,6 @@
 		E07A9919200462C700BFF43A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E07A9920200467FF00BFF43A /* Xibs */,
 				E07A991A200462D500BFF43A /* Storeboards */,
 				E07A98D32003EFFC00BFF43A /* ViewController.swift */,
 				E07A991C2004630900BFF43A /* CharactersTableViewCell.swift */,
@@ -192,11 +196,15 @@
 			path = Storeboards;
 			sourceTree = "<group>";
 		};
-		E07A9920200467FF00BFF43A /* Xibs */ = {
+		E07A992320046D8900BFF43A /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				E07A992620046D9B00BFF43A /* Marvel-Bold.ttf */,
+				E07A992420046D9B00BFF43A /* Marvel-BoldItalic.ttf */,
+				E07A992520046D9B00BFF43A /* Marvel-Italic.ttf */,
+				E07A992720046D9B00BFF43A /* Marvel-Regular.ttf */,
 			);
-			path = Xibs;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
