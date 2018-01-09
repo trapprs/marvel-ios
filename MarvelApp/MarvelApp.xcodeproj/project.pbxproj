@@ -124,7 +124,6 @@
 				E07A98FF2003F26000BFF43A /* Service */,
 				E07A99022003F3FD00BFF43A /* Model */,
 				E07A99072003FD3000BFF43A /* Support Files */,
-				E07A98DA2003EFFC00BFF43A /* LaunchScreen.storyboard */,
 				E07A990A2003FF4600BFF43A /* MarvelApp-Bridging-Header.h */,
 				E07A98DD2003EFFC00BFF43A /* Info.plist */,
 			);
@@ -194,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				E07A98D52003EFFC00BFF43A /* Main.storyboard */,
+				E07A98DA2003EFFC00BFF43A /* LaunchScreen.storyboard */,
 			);
 			path = Storeboards;
 			sourceTree = "<group>";

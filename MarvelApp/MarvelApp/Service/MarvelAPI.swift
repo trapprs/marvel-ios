@@ -30,5 +30,17 @@ struct Marvel {
             completion(newResult)
         })
     }
+    mutating func searchCharacters(_ offset: Int, _ search: String, completion: @escaping CompletionProposals) {
+        let timestamp = Date().ticks
+        
+        let hash = MD5().getHash(timestamp, MarvelAPIAuth.privateKey, MarvelAPIAuth.publicKey)
+        let stringUrl: String = "\(MarvelAPIAuth.url)?nameStartsWith=\(search)&limit=20&offset=\(offset)&ts=\(timestamp)&apikey=\(MarvelAPIAuth.publicKey)&hash=\(hash)"
+        
+        Service.requestAPI(url: stringUrl, completion: { (result) in
+            let newResult = result.flatMap { try JSONDecoder().decode(CharacterDataWrapper.self, from: $0) }
+            completion(newResult)
+        })
+    }
+    
     
 }

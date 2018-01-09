@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     var marvel =  Marvel()
     var offSetScroll = 0
+    var searching: Bool = false
     
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -32,8 +33,25 @@ class ViewController: UIViewController {
         self.tableView.backgroundView = nil
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
+        self.searchBar.delegate = self
        
+    }
+    
+}
+
+extension ViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if !searchText.isEmpty {
+            if searchText.count == 0 {
+                self.offSetScroll = 0
+                self.listCharacters()
+                self.searching = false
+            } else {
+                self.serachCharacters(searchText)
+                self.searching = true
+            }
+        }
     }
 }
 
@@ -45,7 +63,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CharactersTableViewCell", for: indexPath) as! CharactersTableViewCell
         cell.name.text = self.characters[indexPath.row].name
-        
+        cell.imageCharacter.image = #imageLiteral(resourceName: "wait")
         
         if let path = self.characters[indexPath.row].thumbnail?["path"]{
             if let ext = self.characters[indexPath.row].thumbnail?["extension"] {
@@ -55,7 +73,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
                     guard let image = result.value else { return }
                     
                     DispatchQueue.main.async {
-                        
                         let tmpImage = UIImageView(image: image)
                         cell.imageCharacter.image = tmpImage.image
                     }
@@ -69,7 +86,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         
         let lastRowIndex = self.tableView.numberOfRows(inSection: 0)
         
-        if indexPath.row == lastRowIndex - 1 {
+        if indexPath.row == lastRowIndex - 1 && !self.searching {
             listCharacters()
         }
     }
@@ -110,6 +127,29 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
 
 
 extension ViewController {
+    private func serachCharacters(_ search: String) {
+        self.offSetScroll = 0
+        self.characters.removeAll()
+        
+        self.marvel.searchCharacters(offSetScroll, search , completion: { [unowned self] result in
+            
+            guard let results = result.value else {
+                if let error = result.error {
+                    print("Error: \(error)")
+                }
+                return
+            }
+            DispatchQueue.main.async {
+                for result in (results.data?.results)! {
+                    self.characters.append(result)
+                    print(result.name)
+                }
+                self.tableView.reloadData()
+            }
+        })
+        
+        offSetScroll += 20
+    }
     private func listCharacters() {
         self.marvel.listCharacters(offSetScroll, completion: { [unowned self] result in
             guard let results = result.value else {
