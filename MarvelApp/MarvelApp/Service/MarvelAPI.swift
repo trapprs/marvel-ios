@@ -9,7 +9,7 @@
 import Foundation
 
 struct MarvelAPIAuth {
-    static let url: String = "https://gateway.marvel.com:443/v1/public/characters?"
+    static let url: String = "https://gateway.marvel.com:443/v1/public/characters?limit=20&"
     static let publicKey: String = "b6e729e1b383c76a5c57de217a2d671a"
     static let privateKey: String = "6d846433c10c54d50f533cee3025a0382964c129"
 }
@@ -17,12 +17,12 @@ struct MarvelAPIAuth {
 struct Marvel {
     
     typealias CompletionProposals = (Result<CharacterDataWrapper>) -> Void
-    
-    mutating func listCharacters(completion: @escaping CompletionProposals) {
+ 
+    mutating func listCharacters(_ offset: Int, completion: @escaping CompletionProposals) {
         let timestamp = Date().ticks
         
         let hash = MD5().getHash(timestamp, MarvelAPIAuth.privateKey, MarvelAPIAuth.publicKey)
-        let stringUrl: String = "\(MarvelAPIAuth.url)ts=\(timestamp)&apikey=\(MarvelAPIAuth.publicKey)&hash=\(hash)"
+        let stringUrl: String = "\(MarvelAPIAuth.url)offset=\(offset)&ts=\(timestamp)&apikey=\(MarvelAPIAuth.publicKey)&hash=\(hash)"
 
         Service.requestAPI(url: stringUrl, completion: { (result) in
             let newResult = result.flatMap { try JSONDecoder().decode(CharacterDataWrapper.self, from: $0) }

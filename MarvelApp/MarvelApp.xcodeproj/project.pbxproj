@@ -21,6 +21,7 @@
 		E07A991120040D4F00BFF43A /* CharacterDataWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07A991020040D4F00BFF43A /* CharacterDataWrapper.swift */; };
 		E07A99132004238D00BFF43A /* CharacterDataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07A99122004238D00BFF43A /* CharacterDataContainer.swift */; };
 		E07A99152004264A00BFF43A /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07A99142004264A00BFF43A /* DataExtension.swift */; };
+		E07A991E2004630900BFF43A /* CharactersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07A991C2004630900BFF43A /* CharactersTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		E07A991020040D4F00BFF43A /* CharacterDataWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDataWrapper.swift; sourceTree = "<group>"; };
 		E07A99122004238D00BFF43A /* CharacterDataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDataContainer.swift; sourceTree = "<group>"; };
 		E07A99142004264A00BFF43A /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
+		E07A991C2004630900BFF43A /* CharactersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,11 +114,10 @@
 		E07A98D02003EFFC00BFF43A /* MarvelApp */ = {
 			isa = PBXGroup;
 			children = (
+				E07A9919200462C700BFF43A /* View */,
 				E07A99072003FD3000BFF43A /* Support Files */,
 				E07A98FF2003F26000BFF43A /* Service */,
 				E07A99022003F3FD00BFF43A /* Model */,
-				E07A98D32003EFFC00BFF43A /* ViewController.swift */,
-				E07A98D52003EFFC00BFF43A /* Main.storyboard */,
 				E07A98D82003EFFC00BFF43A /* Assets.xcassets */,
 				E07A98DA2003EFFC00BFF43A /* LaunchScreen.storyboard */,
 				E07A990A2003FF4600BFF43A /* MarvelApp-Bridging-Header.h */,
@@ -170,6 +171,32 @@
 				E07A98D12003EFFC00BFF43A /* AppDelegate.swift */,
 			);
 			path = "Support Files";
+			sourceTree = "<group>";
+		};
+		E07A9919200462C700BFF43A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E07A9920200467FF00BFF43A /* Xibs */,
+				E07A991A200462D500BFF43A /* Storeboards */,
+				E07A98D32003EFFC00BFF43A /* ViewController.swift */,
+				E07A991C2004630900BFF43A /* CharactersTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E07A991A200462D500BFF43A /* Storeboards */ = {
+			isa = PBXGroup;
+			children = (
+				E07A98D52003EFFC00BFF43A /* Main.storyboard */,
+			);
+			path = Storeboards;
+			sourceTree = "<group>";
+		};
+		E07A9920200467FF00BFF43A /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Xibs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +337,7 @@
 				E07A99062003F76900BFF43A /* MarvelAPI.swift in Sources */,
 				E07A99132004238D00BFF43A /* CharacterDataContainer.swift in Sources */,
 				E07A98D42003EFFC00BFF43A /* ViewController.swift in Sources */,
+				E07A991E2004630900BFF43A /* CharactersTableViewCell.swift in Sources */,
 				E07A99092003FD4300BFF43A /* MD5.swift in Sources */,
 				E07A98D22003EFFC00BFF43A /* AppDelegate.swift in Sources */,
 				E07A99012003F2BF00BFF43A /* Service.swift in Sources */,
