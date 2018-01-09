@@ -14,6 +14,9 @@
         <array key="Marvel-Bold.ttf">
             <string>Marvel-Bold</string>
         </array>
+        <array key="Marvel-Regular.ttf">
+            <string>Marvel-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Heroes-->
@@ -45,11 +48,25 @@
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jK8-xJ-Sfk">
                                                             <rect key="frame" x="10" y="10" width="355" height="179.5"/>
                                                         </imageView>
-                                                        <view opaque="NO" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mBh-bU-IgD">
+                                                        <view opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mBh-bU-IgD">
                                                             <rect key="frame" x="10" y="146" width="355" height="43"/>
+                                                            <subviews>
+                                                                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZeG-G3-V3X">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="355" height="43"/>
+                                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wDf-xd-Vxu">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="355" height="43"/>
+                                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                    </view>
+                                                                    <blurEffect style="light"/>
+                                                                </visualEffectView>
+                                                            </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.59706763698630139" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
+                                                                <constraint firstItem="ZeG-G3-V3X" firstAttribute="leading" secondItem="mBh-bU-IgD" secondAttribute="leading" id="641-Wq-72R"/>
+                                                                <constraint firstItem="ZeG-G3-V3X" firstAttribute="top" secondItem="mBh-bU-IgD" secondAttribute="top" id="Co3-fS-YFg"/>
+                                                                <constraint firstAttribute="trailing" secondItem="ZeG-G3-V3X" secondAttribute="trailing" id="OCc-YT-keg"/>
                                                                 <constraint firstAttribute="height" constant="43" id="Vtt-97-4Iw"/>
+                                                                <constraint firstAttribute="bottom" secondItem="ZeG-G3-V3X" secondAttribute="bottom" id="xnF-b1-TKO"/>
                                                             </constraints>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jPB-zd-0y1">
@@ -87,7 +104,7 @@
                                         <connections>
                                             <outlet property="imageCharacter" destination="jK8-xJ-Sfk" id="N8N-Kx-NoM"/>
                                             <outlet property="name" destination="jPB-zd-0y1" id="Pcx-D1-yJn"/>
-                                            <segue destination="NXW-RK-z5H" kind="show" id="ieQ-TF-iY5"/>
+                                            <segue destination="NXW-RK-z5H" kind="show" identifier="detail" id="ieQ-TF-iY5"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -111,6 +128,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Heroes" id="YWv-ke-KCp"/>
                     <connections>
+                        <outlet property="searchBar" destination="ahm-b8-hhU" id="rOI-5N-qmQ"/>
                         <outlet property="tableView" destination="yYf-Hy-MPN" id="980-pU-98R"/>
                     </connections>
                 </viewController>
@@ -118,20 +136,63 @@
             </objects>
             <point key="canvasLocation" x="479.19999999999999" y="93.103448275862078"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail-->
         <scene sceneID="FpB-oo-w6S">
             <objects>
-                <viewController id="NXW-RK-z5H" sceneMemberID="viewController">
+                <viewController title="Detail" id="NXW-RK-z5H" customClass="DetailViewController" customModule="MarvelApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WIO-fS-gEN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="znb-X6-ToQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="yZx-2D-ccf"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nOE-15-lsj">
+                                <rect key="frame" x="20" y="220" width="335" height="363"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Marvel-Regular" family="Marvel" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="sKJ-yQ-7eI">
+                                <rect key="frame" x="177.5" y="291" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKH-UJ-PTj">
+                                <rect key="frame" x="24" y="200" width="335" height="0.0"/>
+                                <fontDescription key="fontDescription" name="Marvel-Bold" family="Marvel" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FbX-5R-GCT" firstAttribute="trailing" secondItem="UKH-UJ-PTj" secondAttribute="trailing" constant="16" id="2zX-bo-uLY"/>
+                            <constraint firstItem="znb-X6-ToQ" firstAttribute="top" secondItem="FbX-5R-GCT" secondAttribute="top" id="3iS-el-QoX"/>
+                            <constraint firstItem="sKJ-yQ-7eI" firstAttribute="centerX" secondItem="WIO-fS-gEN" secondAttribute="centerX" id="8fc-rh-U3W"/>
+                            <constraint firstItem="UKH-UJ-PTj" firstAttribute="leading" secondItem="FbX-5R-GCT" secondAttribute="leading" constant="24" id="B7q-Rh-WAL"/>
+                            <constraint firstItem="nOE-15-lsj" firstAttribute="leading" secondItem="FbX-5R-GCT" secondAttribute="leading" constant="20" id="EI8-63-QF7"/>
+                            <constraint firstItem="znb-X6-ToQ" firstAttribute="leading" secondItem="FbX-5R-GCT" secondAttribute="leading" id="JOu-6H-Tq1"/>
+                            <constraint firstItem="znb-X6-ToQ" firstAttribute="trailing" secondItem="FbX-5R-GCT" secondAttribute="trailing" id="MNb-Zw-DA1"/>
+                            <constraint firstItem="sKJ-yQ-7eI" firstAttribute="centerY" secondItem="WIO-fS-gEN" secondAttribute="centerY" id="NXm-PM-5nZ"/>
+                            <constraint firstItem="nOE-15-lsj" firstAttribute="top" secondItem="UKH-UJ-PTj" secondAttribute="bottom" constant="20" id="XmZ-7i-yLc"/>
+                            <constraint firstItem="FbX-5R-GCT" firstAttribute="trailing" secondItem="nOE-15-lsj" secondAttribute="trailing" constant="20" id="Zc7-EK-fMa"/>
+                            <constraint firstItem="UKH-UJ-PTj" firstAttribute="top" secondItem="znb-X6-ToQ" secondAttribute="bottom" constant="20" id="bzq-aL-I1X"/>
+                            <constraint firstItem="FbX-5R-GCT" firstAttribute="bottom" secondItem="nOE-15-lsj" secondAttribute="bottom" constant="20" id="e50-ZS-PDF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="FbX-5R-GCT"/>
                     </view>
+                    <connections>
+                        <outlet property="activeIndictor" destination="sKJ-yQ-7eI" id="wKx-K8-23L"/>
+                        <outlet property="details" destination="nOE-15-lsj" id="aat-Fz-Ar3"/>
+                        <outlet property="image" destination="znb-X6-ToQ" id="ZkK-0i-K79"/>
+                        <outlet property="nameCharacter" destination="UKH-UJ-PTj" id="3fn-9R-SSF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tI3-Mj-RVC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1489" y="82"/>
+            <point key="canvasLocation" x="1488.8" y="81.409295352323838"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="h9h-t2-Yn4">
